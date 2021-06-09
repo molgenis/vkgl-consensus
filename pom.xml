@@ -13,7 +13,7 @@
 
   <groupId>org.molgenis</groupId>
   <artifactId>vkgl-consensus</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 
   <name>vkgl-consensus</name>
   <description>VKGL data sharing of variant classifications consensus</description>
