@@ -1,0 +1,23 @@
+os: linux
+dist: bionic
+language: java
+jdk: openjdk11
+cache:
+  directories:
+    - "$HOME/.m2"
+addons:
+  sonarcloud:
+    organization: molgenis
+    token:
+      secure: eZ1VgolJDKx/7b1RU+OTDRCgeTphpNgN0bVYRavbvT0R0QUZKSpvkKS2DuhSTY92be4QoE6hWm0bt73gB4pfonrGmaEYVsMmm3VVeucxKSgFx5Xkz71n657VvN5nw9CRHUYLQJvgfWQ74Gg/boQBvMjFbvRp54btI2/9icdTJqOxGlmuJnBReuoc7lZJmXU2D6StjDd6ARl8SDq3YC5lM/Jwsk4pOKbjoF9ry3WPhLOFyOeAX5lO0DpxybjiMwOwQ+dTEUDkw0SdGpZstw0d+BFL4unHj5oM3mdAaWLkp2+HFjAhVnCBGr2InWYJyBmF4Q4th2gV+yHXk5VShoxrb2rMzwHNcBIbpRpGKqTgIDyDjMfs0PL8wsSCYschmc2IAtbQ7YLnqwVXF0OMFlEd33HtyHSxfzzkCOcooU1tGXxr+20l/pPu9n5iQvh7SIDIspDRRoZij95Wb0c59Q+CnqLSyNb5oG8I2N1tTBGz5k5wiz6bsddO4//P3z4bZXerF3V+vEBYt7VB+TL5zvdna3s3I93hDuY2bqGfKVsqe++PCcvS5XPEi0cJZGBl3sqx7vzokQ3EgtZZNyKC0XhFFHYtJlkTyIbGyzL6aTmPgfjFIZcwfo7KhMWYlQ1cxYuU28gvwa2Mj2oK3sbMDi9GZD9wlj4PC5Nc7s6/REqYcSc=
+script:
+  - mvn clean install sonar:sonar -Pcoverage -Dsonar.projectKey=molgenis_vkgl-consensus
+deploy:
+  provider: releases
+  token:
+    secure: yW89L3sRuO4JBCeG2WCZeqvQW0VJLQnbO4p8J367ZMTxMyqaVycLJpM/9hwIPgN7bIkb1A8QaY/+WU6q8aX2fT06g3OvFCd3FVWtQVOghqwtnT5A6lik1Os1elgi2We3nvdJqNPMfK8HcSGPoybvs/DrXAupugMLXQwOPLSkzdGdyVuLmvllCIoW7ixNGmZYAfVeCjNM9bPr9iUvA3B9NBPBswyLfOPv7W2LHD5EClZEOfoJQG2U/6+a9oFnKjf2gQfKNKwm1S0VKd5aspE9ct7/2R0QGmAERHTOcaG6KZE15bRuc/fl/WnRKgf2koawwkXd9EMpfiCS4CPx+QREq/A6ULCeBQgl+0dRy0th9VKLv5iDl8XBepb/bC09SAXGfhKt+WqwNPqUy0Zx8/U0PyMutfsWvGjlFREG+h2Mlmk1ZLV4VRb1kG74giBzYbJaX7c/o9sYdDv+28UNdIMWTUwFwwnQ26yNKZNY/KdY1xhEZMLhVHE9YPgyC26KkKBpC8hT81gxs0HKYUtdqdMA5FJHY1IRM/dYY3mUrD38lK00U53YhyXB0drotoSjCP5+RcFUF2Sa+ti8X8wbEtxQ/0r2PlibtZ82uHWRAsniJiU0vFKlwmAt8K13rD5LF6fzb3nY7GA8RXQinLx3TPzixFFN/wxDXVx9U7LGL1NKHyI=
+  file: target/vkgl-consensus.jar
+  prerelease: true
+  on:
+    tags: true
+  edge: true # opt in to dpl v2

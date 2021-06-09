@@ -1,0 +1,5 @@
+chromosome	start	stop	ref	alt	gene	nr_labs	amc	erasmus_mc	lumc	nki	radboud_mumc	umc_utrecht	umcg	vumc	consensus	type
+1	456	457	G	GA	WTF	1	p								p	total_agreement
+2	123	123	G	A	ENG	4	b	b	lb	lb					lb	agreement
+2	123	123	G	A	GNE	2							b	p		total_disagreement
+2	123	123	T	A	ENG	2					vus	vus			vus	total_agreement
