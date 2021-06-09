@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/molgenis/vkgl-consensus.svg?branch=main)](https://travis-ci.com/molgenis/vkgl-consensus)
+[![Quality Status](https://sonarcloud.io/api/project_badges/measure?project=molgenis_vkgl-consensus&metric=alert_status)](https://sonarcloud.io/dashboard?id=molgenis_vkgl-consensus)
 # VKGL data sharing of variant classifications: consensus
 
 Command-line application to generate consensus file for VKGL data sharing of variant classifications
