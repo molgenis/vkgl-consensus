@@ -6,8 +6,7 @@ Command-line application to generate consensus file for VKGL data sharing of var
 based on the outputs of https://github.com/molgenis/data-transform-vkgl.
 
 ## Requirements
-
-- Java 11
+- Java 17
 
 ## Usage
 
